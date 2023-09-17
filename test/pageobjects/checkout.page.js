@@ -17,7 +17,7 @@ class CheckoutPage {
         await this.continueButton.click();
     }
     async isDisplayed() {
-        return await this.firstNameField.isDisplayed();
+        return this.firstNameField.isDisplayed();
     }
 }
 
