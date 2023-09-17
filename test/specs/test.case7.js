@@ -1,11 +1,11 @@
-import LoginPage from '../pageobjects/login.page.js';
-import InventoryPage from '../pageobjects/inventory.page.js';
+import loginPage from '../pageobjects/login.page.js';
+import inventoryPage from '../pageobjects/inventory.page.js';
 
 describe('Sauce Demo Social Media Navigation Test', () => {
     before(async () => {
-        await LoginPage.open();
-        await LoginPage.login('standard_user', 'secret_sauce');
-        await expect(InventoryPage.inventoryList).toBeDisplayed();
+        await loginPage.open();
+        await loginPage.login('standard_user', 'secret_sauce');
+        await expect(inventoryPage.inventoryList).toBeDisplayed();
     });
 
     it('should navigate to Twitter when Twitter icon is clicked', async () => {

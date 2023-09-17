@@ -1,18 +1,18 @@
-import LoginPage from '../pageobjects/login.page.js';
-import InventoryPage from '../pageobjects/inventory.page.js';
+import loginPage from '../pageobjects/login.page.js';
+import inventoryPage from '../pageobjects/inventory.page.js';
 
 describe('Sauce Demo Inventory Test', () => {
     before(async () => {
-        await LoginPage.open();
-        await LoginPage.login('standard_user', 'secret_sauce');
-        await expect(InventoryPage.inventoryList).toBeDisplayed();
+        await loginPage.open();
+        await loginPage.login('standard_user', 'secret_sauce');
+        await expect(inventoryPage.inventoryList).toBeDisplayed();
     });
 
     const sortingOptions = ['Price (low to high)', 'Price (high to low)', 'Name (A to Z)', 'Name (Z to A)'];
     sortingOptions.forEach((option) => {
         it(`should sort products by ${option}`, async () => {
-            await InventoryPage.selectSortingOption(option);
-            const products = await InventoryPage.getProductList();
+            await inventoryPage.selectSortingOption(option);
+            const products = await inventoryPage.getProductList();
             let sorted;
             switch (option) {
                 case 'Price (low to high)':

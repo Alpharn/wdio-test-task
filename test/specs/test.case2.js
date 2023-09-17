@@ -1,20 +1,20 @@
-import LoginPage from '../pageobjects/login.page.js';
+import loginPage from '../pageobjects/login.page.js';
 
 describe('Sauce Demo Login Test for Invalid Password', () => {
     it('should enter a valid username', async () => {
-        await LoginPage.open();
-        await LoginPage.usernameInput.setValue('standard_user');
-        await expect(LoginPage.usernameInput).toHaveValue('standard_user');
+        await loginPage.open();
+        await loginPage.usernameInput.setValue('standard_user');
+        await expect(loginPage.usernameInput).toHaveValue('standard_user');
     });
 
     it('should enter an invalid password', async () => {
         const randomPassword = Math.random().toString(36).substring(7);
-        await LoginPage.passwordInput.setValue(randomPassword);
-        await expect(LoginPage.passwordInput).toHaveAttribute('type', 'password');
+        await loginPage.passwordInput.setValue(randomPassword);
+        await expect(loginPage.passwordInput).toHaveAttribute('type', 'password');
     });
 
     it('should click Login and show error messages', async () => {
-        await LoginPage.loginButton.click();
+        await loginPage.loginButton.click();
         const errorMessage = await $('.error-message-container');
         const loginFieldError = await $('.error_icon');
         const passwordFieldError = await $('.error_icon');

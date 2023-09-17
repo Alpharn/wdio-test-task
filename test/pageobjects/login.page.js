@@ -14,4 +14,5 @@ class LoginPage {
     }
 }
 
-export default new LoginPage();
+const loginPage = new LoginPage();
+export default loginPage;
