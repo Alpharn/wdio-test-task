@@ -15,15 +15,10 @@ describe('Sauce Demo Login Test for Invalid Password', () => {
 
     it('should click Login and show error messages', async () => {
         await loginPage.loginButton.click();
-        const errorMessage = await $('.error-message-container');
-        const loginFieldError = await $('.error_icon');
-        const passwordFieldError = await $('.error_icon');
-        const loginErrorHighlight = $('#user-name.input_error.error');
-        const passwordErrorHighlight = $('#password.input_error.error');
-        await expect(errorMessage).toHaveText("Epic sadface: Username and password do not match any user in this service");
-        await expect(loginFieldError).toBeDisplayed();
-        await expect(passwordFieldError).toBeDisplayed();
-        await expect(loginErrorHighlight).toBeDisplayed();
-        await expect(passwordErrorHighlight).toBeDisplayed();
+        await expect(loginPage.hasErrorMessage("Epic sadface: Username and password do not match any user in this service")).toBeTruthy();
+        await expect(loginPage.isLoginFieldErrorDisplayed()).toBeTruthy();
+        await expect(loginPage.isPasswordFieldErrorDisplayed()).toBeTruthy();
+        await expect(loginPage.isLoginErrorHighlighted()).toBeTruthy();
+        await expect(loginPage.isPasswordErrorHighlighted()).toBeTruthy();
     });
 });
