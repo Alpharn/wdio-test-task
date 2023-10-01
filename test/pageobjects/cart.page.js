@@ -19,5 +19,5 @@ class CartPage extends Page {
         return false;
     }
 }
-const cartPage = new CartPage();
-export default cartPage;
+
+export default new CartPage();

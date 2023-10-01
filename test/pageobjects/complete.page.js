@@ -6,5 +6,5 @@ class CompletePage {
         await this.backHomeButton.click();
     }
 }
-const completePage = new CompletePage();
-export default completePage;
+
+export default new CompletePage();

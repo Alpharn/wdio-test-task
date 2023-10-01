@@ -12,5 +12,4 @@ class OverviewPage extends Page {
     }
 }
 
-const overviewPage = new OverviewPage();
-export default overviewPage;
+export default new OverviewPage();

@@ -20,5 +20,5 @@ class CheckoutPage {
         return this.firstNameField.isDisplayed();
     }
 }
-const checkoutPage = new CheckoutPage();
-export default checkoutPage;
+
+export default new CheckoutPage();
